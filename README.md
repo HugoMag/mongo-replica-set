@@ -7,7 +7,7 @@ This image runs mongodb server in replica set mode.
 
 ## Push:
     docker push user/mongo-replica-set:tag
-If you want to push the image to one of your repositories at https://hub.docker.com, replace user with your own username and set the correct tag
+If you want to push the image to one of your repositories at https://hub.docker.com , replace user with your own username and set the correct tag
 
 
 ## Usage:
@@ -31,7 +31,7 @@ Get the IP or hostname for all the docker instances running mongo-replica-set an
     export MONGO2="meteor-mongo-2"
     export MONGO3="meteor-mongo-3"
 
-# Note: you have to add -u admin -p $MONGODB_PATH if you are using authentication.
+### Note: you have to add -u admin -p $MONGODB_PATH if you are using authentication.
 
     mongo $MONGO1 --eval "rs.initiate(); myconf = rs.conf(); myconf.members[0].host = '$MONGO1'; rs.reconfig(myconf,{force:true}); rs.add('$MONGO2'); rs.add('$MONGO3');"
 
